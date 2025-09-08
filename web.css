@@ -1,0 +1,343 @@
+:root {
+  /* Palet warna baru dari biru tua */
+  /** Mendefinisikan properti kustom (variabel) untuk palet warna, sehingga mudah dikelola dan diubah di seluruh stylesheet. */
+  --bg-color: #94b2cf; /* Warna latar belakang utama */
+  --container-bg: #e9f3f7; /* Warna latar belakang container */
+  --primary-color: #073e79; /* Warna utama untuk judul, dll. */
+  --secondary-color: #4a4a4a; /* Warna sekunder untuk teks */
+  --accent-color: #2a73a9; /* Warna aksen untuk garis bawah, dll. */
+  --border-color: #c2d4e7; /* Warna untuk batas/garis */
+}
+
+body {
+  font-family: "Montserrat", sans-serif; /* Mengatur font utama */
+  margin: 0; /* Menghilangkan margin default browser */
+  background-color: var(
+    --bg-color
+  ); /* Menggunakan warna latar belakang utama */
+  color: var(--secondary-color); /* Menggunakan warna teks sekunder */
+  line-height: 1.6; /* Mengatur jarak antar baris */
+  padding: 20px; /* Menambah padding di sekitar body */
+  display: grid; /* Mengatur tata letak sebagai grid */
+  font-size: 1.125em; /* Meningkatkan ukuran font dasar */
+}
+
+.container {
+  width: 90%; /* Lebar container 90% dari parent */
+  max-width: 900px; /* Batas lebar maksimum container */
+  margin: 40px auto; /* Mengatur margin atas-bawah dan menengahkan secara horizontal */
+  background-color: var(
+    --container-bg
+  ); /* Menggunakan warna latar belakang container */
+  padding: 40px; /* Menambah padding di dalam container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Menambah bayangan lembut */
+  border-radius: 8px; /* Sudut membulat pada container */
+  text-align: left; /* Teks rata kiri */
+}
+
+.header {
+  text-align: center; /* Teks di dalam header rata tengah */
+  padding-bottom: 20px; /* Padding di bagian bawah header */
+  position: relative; /* Mengatur posisi relatif */
+}
+
+.header h1 {
+  font-family: "Playfair Display", serif; /* Mengatur font untuk h1 */
+  font-size: 3.5em; /* Ukuran font besar */
+  color: var(--primary-color); /* Warna font utama */
+  margin: 0; /* Menghilangkan margin default h1 */
+  font-weight: 700; /* Ketebalan font tebal */
+  letter-spacing: 2px; /* Jarak antar huruf */
+  position: relative; /* Mengatur posisi relatif */
+  display: inline-block; /* Memungkinkan penggunaan pseudo-element */
+}
+
+.header h1:after {
+  content: ""; /* Membuat elemen kosong */
+  position: absolute; /* Mengatur posisi absolut */
+  bottom: -5px; /* Jarak dari bawah elemen */
+  left: 50%; /* Mulai dari 50% dari kiri */
+  transform: translateX(-50%); /* Menggeser ke kiri 50% dari lebar elemen */
+  width: 70%; /* Lebar garis bawah */
+  height: 4px; /* Tinggi garis bawah */
+  background: var(--accent-color); /* Warna garis bawah aksen */
+  border-radius: 2px; /* Sudut membulat pada garis */
+}
+
+.welcome-text {
+  font-size: 1.2em; /* Ukuran font sedang */
+  color: var(--secondary-color); /* Warna font sekunder */
+  margin-top: 20px; /* Margin atas */
+  font-weight: 500; /* Ketebalan font sedang */
+  font-style: italic; /* Gaya font miring */
+}
+
+.profile-img {
+  margin: 30px 0; /* Margin atas-bawah */
+  text-align: center; /* Gambar rata tengah */
+}
+
+.profile-img img {
+  width: 100%; /* Lebar gambar 100% dari parent */
+  max-width: 600px; /* Batas lebar maksimum gambar */
+  height: auto; /* Tinggi menyesuaikan proporsi */
+  border-radius: 12px; /* Sudut membulat pada gambar */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Bayangan gambar */
+  transition: transform 1s ease; /* Transisi untuk efek hover */
+}
+
+.profile-img img:hover {
+  transform: scale(1.02); /* Memperbesar gambar saat dihover */
+}
+
+h2 {
+  font-family: "Playfair Display", serif; /* Mengatur font untuk h2 */
+  font-size: 2em; /* Ukuran font besar */
+  color: var(--primary-color); /* Warna font utama */
+  text-align: left; /* Teks rata kiri */
+  border-bottom: 2px solid var(--border-color); /* Garis bawah solid */
+  padding-bottom: 8px; /* Padding di bawah garis */
+  margin-top: 40px; /* Margin atas */
+}
+
+h3 {
+  font-family: "Playfair Display", serif; /* Mengatur font untuk h3 */
+  color: var(--primary-color); /* Warna font utama */
+  font-size: 1.5em; /* Ukuran font sedang */
+  margin-top: 30px; /* Margin atas */
+  position: relative; /* Mengatur posisi relatif */
+}
+
+h3:before {
+  content: "•"; /* Membuat bullet point */
+  color: var(--accent-color); /* Warna bullet point aksen */
+  font-size: 1.5em; /* Ukuran bullet point */
+  position: absolute; /* Mengatur posisi absolut */
+  left: -20px; /* Jarak dari kiri elemen */
+  top: -5px; /* Jarak dari atas elemen */
+}
+
+.profile-list {
+  list-style: none; /* Menghilangkan bullet default */
+  padding: 0; /* Menghilangkan padding default */
+  display: block; /* Mengatur sebagai blok */
+}
+
+.profile-list li {
+  background-color: #f8f9fa; /* Warna latar belakang item list */
+  padding: 15px 20px; /* Padding di dalam item */
+  border-left: 5px solid var(--primary-color); /* Garis tebal di kiri */
+  border-radius: 8px; /* Sudut membulat */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+  transition: background-color 0.3s ease; /* Transisi untuk efek hover */
+  margin-bottom: 12px; /* Jarak antar item */
+}
+
+.profile-list li:hover {
+  background-color: var(
+    --border-color
+  ); /* Mengubah warna latar belakang saat dihover */
+}
+.profile-list strong {
+  color: var(--primary-color); /* Warna teks tebal */
+  font-weight: 600; /* Ketebalan font semi-bold */
+}
+
+.content-section {
+  margin-top: 40px; /* Margin atas bagian konten */
+}
+
+.post-info {
+  font-size: 0.9em; /* Ukuran font kecil */
+  color: var(--accent-color); /* Warna font aksen */
+  margin-bottom: 25px; /* Margin bawah */
+  border-left: 2px solid var(--accent-color); /* Garis kiri aksen */
+  padding-left: 10px; /* Padding kiri */
+}
+
+.post-content p {
+  margin-bottom: 20px; /* Jarak antar paragraf */
+  text-align: justify; /* Teks rata kiri dan kanan */
+}
+
+.album-list {
+  display: flex; /* Mengatur tata letak sebagai flexbox */
+  flex-wrap: wrap; /* Membungkus item ke baris baru */
+  gap: 20px; /* Jarak antar item */
+  list-style: none; /* Menghilangkan bullet */
+  padding: 0; /* Menghilangkan padding */
+  margin-top: 30px; /* Margin atas */
+  justify-content: flex-start; /* Mengatur item dari kiri */
+}
+
+.album-item {
+  text-align: center; /* Teks di tengah item */
+  background-color: var(--container-bg); /* Warna latar belakang item */
+  padding: 20px; /* Padding di dalam item */
+  border-radius: 12px; /* Sudut membulat */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
+  flex: 1 1 200px; /* Mengatur flex-grow, flex-shrink, dan basis item */
+  max-width: 220px; /* Batas lebar maksimum item */
+}
+
+.album-item:hover {
+  transform: translateY(-8px); /* Menggeser item ke atas saat dihover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Bayangan lebih jelas saat dihover */
+}
+
+.album-item a {
+  color: var(--primary-color); /* Warna link */
+  text-decoration: none; /* Menghilangkan garis bawah link */
+  font-weight: bold; /* Ketebalan font tebal */
+  font-size: 1.2em; /* Ukuran font link */
+  display: block; /* Link sebagai blok */
+  margin-bottom: 5px; /* Margin bawah link */
+}
+
+.album-item small {
+  color: #303a43; /* Warna teks kecil */
+  display: block; /* Teks kecil sebagai blok */
+  margin-bottom: 15px; /* Margin bawah teks kecil */
+  font-size: 0.9em; /* Ukuran font kecil */
+}
+
+.album-item img {
+  width: 100%; /* Lebar gambar 100% */
+  height: auto; /* Tinggi menyesuaikan */
+  max-width: 180px; /* Batas lebar maksimum gambar */
+  border-radius: 8px; /* Sudut membulat */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan gambar */
+}
+
+.footer {
+  text-align: center; /* Teks rata tengah */
+  margin-top: 40px; /* Margin atas */
+  padding-top: 20px; /* Padding atas */
+  border-top: 1px solid var(--border-color); /* Garis atas solid */
+  font-size: 0.9em; /* Ukuran font kecil */
+  color: var(--secondary-color); /* Warna teks sekunder */
+}
+
+.social-links {
+  text-align: center; /* Teks rata tengah */
+  margin-top: 10px; /* Margin atas */
+}
+
+.social-links a {
+  /** Mengatur gaya ikon tautan sosial individu. */
+  display: inline-block;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  /** Mendefinisikan keadaan hover untuk ikon sosial. */
+  transform: scale(1.1);
+}
+
+.social-icon {
+  /** Mengatur gaya ikon sosial itu sendiri. */
+  width: 60px;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  /* Media query untuk perangkat dengan lebar layar kurang dari 768px */
+  body {
+    padding: 10px; /* Mengurangi padding body */
+  }
+  .container {
+    padding: 20px; /* Mengurangi padding container */
+    margin: 20px auto; /* Mengurangi margin container */
+  }
+  .header h1 {
+    font-size: 2.5em; /* Mengurangi ukuran font h1 */
+  }
+  .profile-list {
+    display: block; /* Mengatur list sebagai blok */
+  }
+  .album-list {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom */
+    align-items: center; /* Menengahkan item secara horizontal */
+  }
+  .album-item {
+    width: 100%; /* Lebar item 100% */
+    max-width: none; /* Menghilangkan batas lebar maksimum */
+  }
+}
+
+.quote-container {
+  border-left: 4px solid var(--accent-color); /* Garis tebal di kiri */
+  padding-left: 20px; /* Padding kiri */
+  font-style: italic; /* Gaya font miring */
+  color: var(--secondary-color); /* Warna font sekunder */
+}
+--- .quote-text {
+  margin: 0; /* Menghilangkan margin */
+}
+
+/* CSS untuk formulir pesan Jemari */
+.form-container {
+  /** Mengatur gaya wadah formulir kontak. Menambahkan padding, warna latar belakang, sudut membulat, dan bayangan kotak. */
+  margin-top: 40px; /* Margin atas */
+  background-color: var(--bg-color); /* Warna latar belakang formulir */
+  padding: 20px 40px; /* Padding di dalam formulir */
+  border-radius: 8px; /* Sudut membulat */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  max-width: 400px; /* Batas lebar maksimum formulir */
+  margin-left: auto; /* Menengahkan formulir */
+  margin-right: auto; /* Menengahkan formulir */
+}
+
+.form-container h1 {
+  text-align: center; /* Teks h1 rata tengah */
+  margin-bottom: 20px; /* Margin bawah */
+  font-family: serif; /* Mengatur font */
+  color: var(--primary-color); /* Warna font utama */
+}
+
+.form-container h2 {
+  margin-top: 40px; /* Margin atas */
+  font-size: 1.2em; /* Ukuran font sedang */
+  font-weight: bold; /* Ketebalan font tebal */
+  color: var(--primary-color); /* Warna font utama */
+}
+
+.form-container label {
+  display: block; /* Label sebagai blok */
+  margin-bottom: 5px; /* Margin bawah */
+  font-weight: bold; /* Ketebalan font tebal */
+  color: var(--primary-color); /* Warna font utama */
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+  width: 100%; /* Lebar 100% dari parent */
+  padding: 10px; /* Padding di dalam input */
+  margin-bottom: 20px; /* Margin bawah */
+  border: 1px solid var(--border-color); /* Garis tepi solid */
+  border-radius: 4px; /* Sudut membulat */
+  box-sizing: border-box; /* Ukuran kotak termasuk padding dan border */
+  font-size: 1em; /* Ukuran font */
+  color: var(--secondary-color); /* Warna teks sekunder */
+  background-color: #e8e8e8; /* Warna latar belakang input */
+}
+--- .form-container button {
+  width: 100%; /* Lebar 100% dari parent */
+  padding: 10px; /* Padding di dalam tombol */
+  background-color: var(--accent-color); /* Warna latar belakang aksen */
+  border: none; /* Menghilangkan border */
+  border-radius: 4px; /* Sudut membulat */
+  cursor: pointer; /* Mengubah kursor menjadi pointer */
+  font-size: 1em; /* Ukuran font */
+  color: #ffffff; /* Warna teks putih */
+  transition: background-color 0.3s ease; /* Transisi untuk efek hover */
+}
+--- .form-container button:hover {
+  background-color: var(
+    --primary-color
+  ); /* Mengubah warna latar belakang saat dihover */
+}
